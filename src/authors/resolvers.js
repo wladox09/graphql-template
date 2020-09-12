@@ -1,5 +1,5 @@
 const { getAuthorsUseCase } = require("./Application/getAuthorsUseCase");
-const { createAuthorsUseCase } = require("./Application/createAuthorsUseCase");
+const { createAuthorUseCase } = require("./Application/createAuthorUseCase");
 const mongoDb = require("./Repositories/MongoDb");
 
 const resolvers = {
@@ -7,7 +7,9 @@ const resolvers = {
     authors: () => getAuthorsUseCase(mongoDb),
   },
   Mutation: {
-    createAuthor: (root, args) => createAuthorsUseCase(root, args, mongoDb),
+    createAuthor: (root, args) => {
+      return createAuthorUseCase(args, mongoDb);
+    }
   }
 };
 

@@ -2,6 +2,7 @@ const { gql } = require("apollo-server");
 
 const typeDef = gql`
   type Author {
+    id: String
     name: String
   }
 

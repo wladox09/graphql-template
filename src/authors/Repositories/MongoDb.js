@@ -4,6 +4,7 @@ class MongoDb extends MongoDbBase {
     constructor() {
         super();
         this.schema = this.mongoose.Schema({
+            id: 'string',
             name: 'string',
             books: [{ type: this.mongoose.Schema.Types.ObjectId, ref: 'Book' }],
         });
@@ -18,6 +19,11 @@ class MongoDb extends MongoDbBase {
     async createAuthors(author) {
         let response = await this.Author.create(author);
         return response;
+    }
+
+    async getAuthorsObjectId(authors) {
+        let authorsObjectId = await this.Author.find({}).where('id').in(authors).select('_id');
+        return authorsObjectId;
     }
 }
 
