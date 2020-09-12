@@ -8,7 +8,7 @@ const typeDef = gql`
 
 const server = new ApolloServer({
   typeDefs: [typeDef, books.typeDef, authors.typeDef],
-  resolvers: [books.resolvers, authors.resolvers],
+  resolvers: [books.resolvers, authors.resolvers]
 });
 
 server.listen().then(({ url }) => {
