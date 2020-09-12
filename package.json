@@ -1,0 +1,20 @@
+{
+  "name": "graphql-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=dev ./node_modules/nodemon/bin/nodemon.js src",
+    "test": "NODE_ENV=test node src",
+    "prod": "NODE_ENV=prod node src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.3.1",
+    "graphql": "^14.1.0",
+    "mongoose": "^5.10.5",
+    "nodemon": "^2.0.4"
+  }
+}
